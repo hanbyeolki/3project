@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - nginx-branch
 
 jobs:
   build-and-push:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          ref: nginx-branch
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
