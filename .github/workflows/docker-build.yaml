@@ -17,7 +17,7 @@ jobs:
         run: docker build -t 3team_nginx:latest .
 
       - name: Log into GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2  # Updated to v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
